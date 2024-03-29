@@ -89,7 +89,10 @@ public class RegistratoDAOimplementato implements RegistratoDAO{
         session.getTransaction().commit();
         session.close();
 
-        System.out.print("Tutti i maschi della tabela: ");
+        System.out.print("Tutti i maschi della tabella: ");
+        for (Registrato reg: registrati){
+            System.out.println(reg.toString());
+        }
         return registrati;
     }
 

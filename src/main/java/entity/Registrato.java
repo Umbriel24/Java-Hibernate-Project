@@ -40,11 +40,11 @@ public class Registrato {
     }
 
     public void setNome(String nome){
-        nome = this.nome;
+       this.nome = nome;
     }
 
     public void setCognome(String cognome){
-        cognome = this.cognome;
+        this.cognome = cognome;
     }
 
     @Override
