@@ -85,11 +85,14 @@ public class RegistratoDAOimplementato implements RegistratoDAO{
     public List<Registrato> trovaMaschi() {
         Session session = Utility.getSessionFactory().openSession();
         session.beginTransaction();
-        List<Registrato> registrati = session.createQuery("FROM Registrato R WHERE R.sesso = 'M%'").list();
+        List<Registrato> registrati = session.createQuery("FROM Registrato R WHERE R.sesso = 'M'").list();
         session.getTransaction().commit();
         session.close();
 
-        System.out.print("Tutti i maschi della tabela: ");
+        System.out.println("Tutti i maschi della tabella: ");
+        for (Registrato reg: registrati){
+            System.out.println(reg.toString());
+        }
         return registrati;
     }
 
