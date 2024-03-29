@@ -10,4 +10,6 @@ public interface RegistratoDAO {
     public Registrato findByID(int id);
     public void deleteAll();
 
+    public List<Registrato> trovaMaschi();
+
 }

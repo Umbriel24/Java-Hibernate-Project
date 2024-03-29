@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import jakarta.persistence.*;
 
+import java.util.Arrays;
+
 
 // Sono annotazioni queste. Rappresentano la mappatura
 @Entity
@@ -16,12 +18,37 @@ public class Registrato {
     private int id;
 
     @Column(name = "nome")
-    private char[] nome;
+    private String nome;
 
     @Column(name = "cognome")
-    private char[] cognome;
+    private String cognome;
 
     @Column(name = "sesso")
-    private char[] sesso;
+    private String sesso;
 
+    public Registrato(String name, String surname, String sex) {
+        nome = name;
+        cognome = surname ;
+        sesso = sex ;
+
+    }
+    public Registrato() {
+
+    }
+    public int getId() {
+        return id;
+    }
+
+    public void setNome(String nome){
+        nome = this.nome;
+    }
+
+    public void setCognome(String cognome){
+        cognome = this.cognome;
+    }
+
+    @Override
+    public String toString() {
+        return "Persona: " + id + " " + nome + " " + cognome + " " + sesso;
+    }
 }
